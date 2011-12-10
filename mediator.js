@@ -41,7 +41,6 @@ Mediator.prototype.bind = function (keys, callback) {
 	else if (typeof keys === 'string' || keys instanceof String) {
 		bind(keys, callback);
 	}
-	
 };
 
 Mediator.prototype.trigger = function (keyString, data) {
