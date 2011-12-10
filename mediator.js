@@ -1,3 +1,9 @@
+/**
+ * mediator.js
+ * @author Martin Liberg
+ * MIT Licensed
+ */
+
 var Mediator = function () {
 	this.events = {};
 };
@@ -27,7 +33,7 @@ Mediator.prototype.bind = function (keys, callback) {
 			callbacks[callbacks.length - 1].push(callback);
 		};
 	
-	if (keys instanceof Object && typeof keys === 'object') {
+	if (typeof keys === 'object' && keys instanceof Object) {
 		for (var name in keys) {
 			bind(name, keys[name]);
 		}
@@ -46,4 +52,4 @@ Mediator.prototype.trigger = function (keyString, data) {
 			callbacks[i][j](data);
 		}
 	}
-}
+};
