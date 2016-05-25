@@ -1,0 +1,23 @@
+{
+  "name": "talkative",
+  "version": "1.0.0",
+  "description": "An implementation of the mediator pattern in JavaScript",
+  "main": "talkative.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marreman/talkative.git"
+  },
+  "keywords": [
+    "mediator",
+    "events"
+  ],
+  "author": "Martin Liberg <mr.liberg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marreman/talkative/issues"
+  },
+  "homepage": "https://github.com/marreman/talkative#readme"
+}
