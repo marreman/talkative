@@ -1,14 +1,8 @@
-/**
- * mediator.js
- * @author Martin Liberg
- * MIT Licensed
- */
-
-var Mediator = function () {
+var Talkative = function () {
   this.events = {};
 };
 
-Mediator.prototype.getCallbacksFor = function (keyString) {
+Talkative.prototype.getCallbacksFor = function (keyString) {
   var keys = keyString.split(':');
   var callbacks = [];
 
@@ -26,7 +20,7 @@ Mediator.prototype.getCallbacksFor = function (keyString) {
   return callbacks;
 };
 
-Mediator.prototype.bind = function (keys, callback) {
+Talkative.prototype.bind = function (keys, callback) {
   var self = this;
   var bind = function (key, callback) {
     var callbacks = self.getCallbacksFor(key);
@@ -42,7 +36,7 @@ Mediator.prototype.bind = function (keys, callback) {
   }
 };
 
-Mediator.prototype.trigger = function (keyString, data) {
+Talkative.prototype.trigger = function (keyString, data) {
   var callbacks = this.getCallbacksFor(keyString);
 
   for (var i = 0, l = callbacks.length; i < l; i++) {
@@ -51,3 +45,5 @@ Mediator.prototype.trigger = function (keyString, data) {
     }
   }
 };
+
+module.exports = Talkative;
