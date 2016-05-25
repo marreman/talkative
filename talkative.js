@@ -9,8 +9,8 @@ var Mediator = function () {
 };
 
 Mediator.prototype.getCallbacksFor = function (keyString) {
-  var keys = keyString.split(':'),
-    callbacks = [];
+  var keys = keyString.split(':');
+  var callbacks = [];
 
   (function getFrom(events) {
     var key = keys.shift();
