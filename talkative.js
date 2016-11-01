@@ -36,12 +36,24 @@ Talkative.prototype.bind = function (keys, callback) {
   }
 };
 
+Talkative.prototype.unbind = function (key, callback) {
+  var callbacks = this.getCallbacksFor(key);
+
+  for (var i = 0, l = callbacks.length; i < l; i++) {
+    for (var j = 0, n = callbacks[i].length; j < n; j++) {
+      if (callback === callbacks[i][j]) {
+        delete callbacks[i][j]
+      }
+    }
+  }
+}
+
 Talkative.prototype.trigger = function (keyString, data) {
   var callbacks = this.getCallbacksFor(keyString);
 
   for (var i = 0, l = callbacks.length; i < l; i++) {
     for (var j = 0, n = callbacks[i].length; j < n; j++) {
-      callbacks[i][j](data);
+      callbacks[i][j] && callbacks[i][j](data);
     }
   }
 };
