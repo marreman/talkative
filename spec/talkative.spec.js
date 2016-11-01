@@ -27,8 +27,13 @@ describe("talkative", () => {
     mediator.unbind("foo", callback)
     mediator.trigger("foo")
 
-    console.log(mediator.events)
-
     expect(callback).not.toHaveBeenCalled()
+  })
+
+  it("should not explode when triggering an event that has no listeners", () => {
+    expect(() => {
+      const mediator = new Talkative()
+      mediator.trigger("foo")
+    }).not.toThrow()
   })
 })
